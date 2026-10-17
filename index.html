@@ -1,1 +1,765 @@
-ABC
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IK GHAR — Bas Ik Ghar Chahiye | Your Home. Back Home.</title>
+  <meta name="description" content="IK GHAR is a housing-first Pakistani property marketplace helping people in Pakistan and overseas Pakistanis discover genuine, affordable homes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #0b5d3b;
+      --green-dark: #083d27;
+      --green-light: #e8f5ef;
+      --gold: #c9a227;
+      --gold-soft: #f5e9c0;
+      --cream: #faf8f4;
+      --text: #1a1a1a;
+      --text-soft: #4a4a4a;
+      --white: #ffffff;
+      --shadow: 0 10px 40px rgba(11, 93, 59, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(11, 93, 59, 0.08);
+      padding: 0.9rem 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(11, 93, 59, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+      border: 2px solid var(--green);
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 1.5rem 5rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201, 162, 39, 0.12), transparent),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(11, 93, 59, 0.08), transparent),
+        var(--cream);
+      position: relative;
+    }
+
+    .hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--green-dark);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .gold {
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-poem {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--green);
+      border-left: 3px solid var(--gold);
+      padding-left: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(11, 93, 59, 0.06);
+    }
+
+    .hero-card h3 {
+      font-size: 1.25rem;
+      color: var(--green-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .focus-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .focus-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .focus-list .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ========== DIFFERENCE ========== */
+    .difference {
+      background: var(--white);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .diff-card {
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .diff-card.them {
+      background: #f5f5f5;
+    }
+
+    .diff-card.us {
+      background: var(--green-light);
+      border-color: rgba(11, 93, 59, 0.15);
+    }
+
+    .diff-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .diff-card.us h3 {
+      color: var(--green-dark);
+    }
+
+    .diff-card p {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .diff-card ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+      color: var(--text-soft);
+    }
+
+    .diff-card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* ========== OVERSEAS ========== */
+    .overseas {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+      color: var(--white);
+    }
+
+    .overseas .section-label {
+      color: var(--gold-soft);
+    }
+
+    .overseas .section-title {
+      color: var(--white);
+    }
+
+    .overseas .section-desc {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .overseas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .overseas-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 1.4rem;
+      text-align: center;
+    }
+
+    .overseas-item .flag {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .overseas-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .overseas-item p {
+      font-size: 0.88rem;
+      opacity: 0.8;
+    }
+
+    /* ========== STRATEGY ========== */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .strategy-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(11, 93, 59, 0.06);
+      transition: transform 0.25s ease;
+    }
+
+    .strategy-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .strategy-card .num {
+      width: 40px;
+      height: 40px;
+      background: var(--green);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .strategy-card h3 {
+      font-size: 1.15rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .strategy-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    /* ========== VISION ========== */
+    .vision {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .vision .section-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .vision-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--green-dark);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    /* ========== SOCIAL CTA ========== */
+    .social-cta {
+      background: var(--green-light);
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.4rem;
+      background: var(--white);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--green-dark);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: all 0.2s;
+      border: 1px solid rgba(11, 93, 59, 0.1);
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-color: var(--green);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.85);
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer .logo {
+      color: var(--white);
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer .logo span {
+      color: var(--gold);
+    }
+
+    footer p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 6rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">IK <span>GHAR</span></a>
+      <div class="nav-links">
+        <a href="#difference">Our Difference</a>
+        <a href="#overseas">Overseas</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#connect" class="btn btn-primary">Stay Connected</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">Housing-First Marketplace · Pakistan</div>
+        <h1>Bas Ik Ghar <span class="gold">Chahiye</span></h1>
+        <p class="hero-tagline">Your Home. Back Home.</p>
+        <p class="hero-desc">
+          IK GHAR is a housing-first Pakistani property marketplace helping ordinary families — in Pakistan and overseas — discover genuine, affordable homes they can actually live in.
+        </p>
+        <div class="hero-actions">
+          <a href="#connect" class="btn btn-primary">Follow Our Journey</a>
+          <a href="#difference" class="btn btn-outline">Why We're Different</a>
+        </div>
+        <p class="hero-poem">
+          Har khwab ik dua se shuru hota hai.<br>
+          Har dua ik ghar par khatam hoti hai.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <h3>What We Focus On</h3>
+        <ul class="focus-list">
+          <li><span class="icon">🏠</span> Houses</li>
+          <li><span class="icon">🏢</span> Flats &amp; Apartments</li>
+          <li><span class="icon">🏡</span> Family Residences</li>
+          <li><span class="icon">💰</span> Affordable Homes</li>
+          <li><span class="icon">🔑</span> Ready-to-Live Properties</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section class="difference" id="difference">
+    <div class="container">
+      <div class="section-label">The Core Difference</div>
+      <h2 class="section-title">Not another property marketplace.</h2>
+      <p class="section-desc">
+        Most platforms treat all property the same. We don't. IK GHAR is built around one simple question: <strong>"Where can an ordinary Pakistani find a home they can actually afford?"</strong>
+      </p>
+
+      <div class="diff-grid">
+        <div class="diff-card them">
+          <h3>Traditional Marketplaces</h3>
+          <p>Property broadly — plots, files, land, commercial, speculative investments...</p>
+          <ul>
+            <li>Plots &amp; files dominate</li>
+            <li>Land speculation focus</li>
+            <li>Everything mixed together</li>
+          </ul>
+        </div>
+        <div class="diff-card us">
+          <h3>IK GHAR — Housing First</h3>
+          <p>Real homes for real families. Houses, flats, and residences people can actually live in.</p>
+          <ul>
+            <li>Houses &amp; flats first</li>
+            <li>Affordable &amp; ready-to-live</li>
+            <li>Value over hype</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERSEAS -->
+  <section class="overseas" id="overseas">
+    <div class="container">
+      <div class="section-label">For Overseas Pakistanis</div>
+      <h2 class="section-title">You may live abroad.<br>Your dream of a home remains.</h2>
+      <p class="section-desc">
+        Millions of Pakistanis in the Gulf, UK, Europe, North America and beyond earn abroad but want a home for themselves or their families back home. IK GHAR is built with you in mind.
+      </p>
+
+      <div class="overseas-grid">
+        <div class="overseas-item">
+          <div class="flag">🇦🇪</div>
+          <h4>Gulf</h4>
+          <p>UAE, Saudi, Qatar &amp; more</p>
+        </div>
+        <div class="overseas-item">
+          <div class="flag">🇬🇧</div>
+          <h4>United Kingdom</h4>
+          <p>London &amp; beyond</p>
+        </div>
+        <div class="overseas-item">
+          <div class="flag">🇪🇺</div>
+          <h4>Europe</h4>
+          <p>Across the continent</p>
+        </div>
+        <div class="overseas-item">
+          <div class="flag">🇺🇸</div>
+          <h4>North America</h4>
+          <p>USA &amp; Canada</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="container">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">Affordable near expensive.</h2>
+      <p class="section-desc">
+        Famous locations are expensive. Nearby areas often hold genuine value — homes with utilities, access, and livability at prices ordinary families can consider. We go looking for those opportunities.
+      </p>
+
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <div class="num">1</div>
+          <h3>Housing Scout Mindset</h3>
+          <p>We don't just list what dealers push. We actively seek areas where ordinary families can buy a real home.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="num">2</div>
+          <h3>Genuine Inventory First</h3>
+          <p>Build real dealer relationships and real housing listings before chasing traffic or ads.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="num">3</div>
+          <h3>Trust Before Revenue</h3>
+          <p>Value first. Monetize later. Featured listings and dealer tools come after we prove the marketplace works.</p>
+        </div>
+        <div class="strategy-card">
+          <div class="num">4</div>
+          <h3>Community, Not Classifieds</h3>
+          <p>Areas, prices, advice, overseas questions, utilities — a trusted housing community, not just ads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="vision">
+    <div class="container">
+      <div class="section-label">The Vision</div>
+      <p class="vision-quote">
+        "Build a trusted Pakistani housing marketplace — starting with Islamabad &amp; Rawalpindi — that helps people find genuine, affordable homes."
+      </p>
+      <p class="section-desc">
+        From the twin cities outward. Housing first. Affordable opportunities. Trusted dealers. Overseas Pakistanis included. A community around the dream of home.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOCIAL CTA -->
+  <section class="social-cta" id="connect">
+    <div class="container">
+      <div class="section-label">Stay Close</div>
+      <h2 class="section-title">We're just getting started.</h2>
+      <p class="section-desc" style="margin-left:auto;margin-right:auto;">
+        Follow IK GHAR for updates on affordable homes, areas we're exploring, and the journey of building a housing marketplace that puts real families first.
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/theikghar/" target="_blank" rel="noopener" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/TheIKGhar" target="_blank" rel="noopener" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@IkGhar" target="_blank" rel="noopener" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="https://www.tiktok.com/@ikghar" target="_blank" rel="noopener" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">IK <span>GHAR</span></div>
+    <p>A housing-first marketplace for Pakistan.<br>Helping families find genuine, affordable homes.</p>
+    <div class="footer-bottom">
+      &copy; 2026 IK GHAR · Bas Ik Ghar Chahiye · Your Home. Back Home.
+    </div>
+  </footer>
+
+</body>
+</html>
